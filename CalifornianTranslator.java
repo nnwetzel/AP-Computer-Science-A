@@ -6,7 +6,7 @@ public class CalifornianTranslator {
    private String keyword2 = "are";
 
    /**
-      Constructs CanadianTranslator object and assigns the string a value
+      Constructs CalifornianTranslator object
       @param the string intended to be added
    */
    public CalifornianTranslator(String s) {
@@ -16,7 +16,7 @@ public class CalifornianTranslator {
    /**
       Returns the string intended to be translated and if keywords are detected, the string intended to be added is added after the keyword. Replaces extra space with a single space.
       @param the string intended to be translated
-      @return the post-translated string
+      @return the translated string
    */
    public String translate(String translatedString) {
       
