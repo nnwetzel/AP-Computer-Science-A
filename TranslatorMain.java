@@ -23,7 +23,7 @@ public class TranslatorMain {
 		//
 		// Extra 1: Create a CalifornianTranslator that inserts a given phrase (for example, ", like, totally")
 		//          after "is" and "are"
-		/*
+      
 		CalifornianTranslator firstCaliTranslator = new CalifornianTranslator(", like, omigosh, ");
 		translated = firstCaliTranslator.translate("That book is so heavy.");
 		System.out.println(translated);
@@ -32,7 +32,6 @@ public class TranslatorMain {
 		translated = secondCaliTranslator.translate("We are programmers, and it is great.");
 		System.out.println(translated);
 		// Should print out "We are, like, totally programmers, and it is, like, totally great.";
-		*/
 		
 		// Extra 2: Modify the CanadianTranslator class to place the suffix between punctuation marks.
 		// Look through the String methods for things that will help, such as length, substring and endsWith.

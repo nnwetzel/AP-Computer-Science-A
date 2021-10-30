@@ -1,6 +1,7 @@
 public class Cryptography
 {
    private static final int ROTATIONS = 13;  // Modifying this value changes the extent to which the letters are rotated
+   private static final int ALPHABET = 26;
 
    public Cryptography() { 
    }
@@ -12,7 +13,7 @@ public class Cryptography
    */
    public int convertToNumbers(char letter) {
       int letterAsNumber = letter - 'A';
-      return ((char) letterAsNumber);
+      return ((int) letterAsNumber);
    }
 
    /**
@@ -21,7 +22,7 @@ public class Cryptography
    @return the letter rotated
    */
    public char applyRotation(char letter) {
-      int rotatedValue = (convertToNumbers(letter) + ROTATIONS) % 26 + 'A'; // Modulus power!
+      int rotatedValue = (convertToNumbers(letter) + ROTATIONS) % ALPHABET + 'A'; // Modulus power!
       return ((char) rotatedValue);
    }
 }
