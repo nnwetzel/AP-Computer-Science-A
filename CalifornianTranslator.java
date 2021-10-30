@@ -1,19 +1,27 @@
 public class CalifornianTranslator {
 
-private String strToBeAdded;
-private String strToBeTranslated;
-private String keyword1 = "are";
-private String keyword2 = "is";
+   private String addedString;
+   private String translatedString;
+   private String keyword1 = "is";
+   private String keyword2 = "are";
 
+   /**
+      Constructs CanadianTranslator object and assigns the string a value
+      @param the string intended to be added
+   */
    public CalifornianTranslator(String s) {
-      strToBeAdded = s;
+      addedString = s;
    }
-
-      public String translate(String strToBeTranslated) {
-      // Objective: If "is" or are" is detected, add strToBeAdded after it in strToBeTranslated
+   
+   /**
+      Returns the string intended to be translated and if keywords are detected, the string intended to be added is added after the keyword. Replaces extra space with a single space.
+      @param the string intended to be translated
+      @return the post-translated string
+   */
+   public String translate(String translatedString) {
       
-      strToBeTranslated = strToBeTranslated.replace(keyword2, keyword2 + strToBeAdded); // This does not work.
-      strToBeTranslated = strToBeTranslated.replace(keyword1, keyword1 + strToBeAdded);
-      return strToBeTranslated;
+      translatedString = translatedString.replace(keyword1, keyword1 + addedString);
+      translatedString = translatedString.replace(keyword2, keyword2 + addedString);
+      return translatedString.replaceAll("\\s+", " ");
    }
 }

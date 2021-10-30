@@ -1,24 +1,24 @@
 public class CanadianTranslator {
 
-   private String strToBeAdded;
-   private String strToBeTranslated;
+   private String addedString;
+   private String translatedString;
    
    /**
-   Assigns the string inteded to be added a value
-   @param the string intended to be added
+      Constructs CanadianTranslator object
+      @param the string intended to be added
    */
    public CanadianTranslator(String s) {
-      strToBeAdded = s;
+      addedString = s;
    }
    
    /**
-   Returns the string intended to be translated combined with the string inteded to be added after replacing about with aboot
-   @param the string intended to be translated
-   @return the post-translated string
+      Returns the string intended to be translated combined with the string intended to be added. Replaces "about" with "aboot".
+      @param the string intended to be translated
+      @return the translated string
    */
-   public String translate(String strToBeTranslated) {
+   public String translate(String translatedString) {
    
-      strToBeTranslated = strToBeTranslated.replace("about", "aboot");
-      return strToBeTranslated + strToBeAdded;
+      translatedString = translatedString.replace("about", "aboot");
+      return translatedString + addedString;
    }
 }
