@@ -1,7 +1,6 @@
 public class CanadianTranslator {
 
    private String addedString;
-   private String translatedString;
    
    /**
       Constructs CanadianTranslator object
@@ -17,8 +16,10 @@ public class CanadianTranslator {
       @return the translated string
    */
    public String translate(String translatedString) {
-   
+
       translatedString = translatedString.replace("about", "aboot");
+      translatedString = translatedString.replace("About", "Aboot");
+      translatedString = translatedString.replace("ABOUT", "ABOOT");
       return translatedString + addedString;
    }
 }

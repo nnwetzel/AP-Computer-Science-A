@@ -1,7 +1,6 @@
 public class CalifornianTranslator {
 
    private String addedString;
-   private String translatedString;
    private String keyword1 = "is";
    private String keyword2 = "are";
 
