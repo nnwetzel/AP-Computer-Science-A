@@ -158,7 +158,6 @@ public class Day
    
    /**
       Returns true if the day is a weekend or a holiday.
-      day.
       @return  true or false
    */
    public boolean noSchool() {
