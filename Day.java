@@ -123,7 +123,6 @@ public class Day
    /***********  Add your code in this area  ***************/
    
    // Your holidayName method goes under here.
-   
    /**
       Returns the holiday's name if it is a holiday. Returns null if it is not a holiday.
       day.
@@ -146,7 +145,6 @@ public class Day
    }
    
    // Your noSchool method goes here.
-
    /**
       Returns the day of the week.
       @return  the day of the week
