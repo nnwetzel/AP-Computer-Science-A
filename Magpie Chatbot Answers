@@ -1,0 +1,51 @@
+Magpie Chatbot Lab
+
+Activity 1
+
+I used the Chomsky chatbot for this activity.
+
+1. When asked "Where did you come from?" the chatbot always responses with "I come from England." and when asked "asdfghjkl;" it responds with "That doesn't make
+any sense.
+2. A chatbot might respond to keywords such as "time" with the actual time or something it doesn't understand like "qwertyuiop" with "Excuse me?"
+
+
+Activity 2
+
+Keyword: weather          | Response: The weather is always just right where I am.
+Keyword: sad, depressed   | Response: I am sorry to hear that.
+Keyword: hungry, famished | Response: You should eat something!
+
+If you were to enter "My mother has a dog but no cat", the reply method would priortize the statement that comes first, so the response would be "Why so negative?".
+In order to priortize responses, the statement must go in a certain order.
+
+1. When a statement contains a keyword such as "no" in "know" it responds the same way as if it was just "no". The problem with the response is that it probably
+won't make sense and isn't what is intended.
+
+
+Activity 3
+
+If the substring does not occur in the string it returns -1.
+
+findKeyword("She's my sister", "sister", 0");
+Iteration: 1 | psn: 9  | before: ' ' | after: ' '
+
+findKeyword("My brother Tom is helpful", "brother", 0);
+Iteration: 1 | psn: 0  | before: ' ' | after: ' '
+
+findKeyword("I can't catch wild cats.", "cat" 0)l
+Iteration: 2 | psn: 8  | before: ' ' | after: 'c'
+Iteration: 3 | psn: 19 | before: ' ' | after: 's'
+
+findKeyword("I know nothing about snow plows.", "no", 0);
+Iteration: 1 | psn: 3  | before: 'k' | after: 'w'
+Iteration: 2 | psn: 7  | before: ' ' | after: 't'
+Iteration: 3 | psn: 22 | before: 's' | after: 'w'
+
+Activity 4
+
+This structure does not work well with the past-tense, for example the response to "I forgot you" is "Why do you forgot me?"
+
+
+Activity 5
+
+I can't think of a better way to get the random responses, however code refactoring isn't essential here because the outcome is the same nevertheless.
