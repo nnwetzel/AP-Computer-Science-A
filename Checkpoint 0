@@ -1,7 +1,28 @@
 Checkpoint 0
 
-My fraction calculator will first identify the arithmetic symbol that appears first, then take the numerator and denominator and solve accordingly. It will then
-display the result as a reduced standard mixed fraction.
+The main class, FracCalc will have a scanner. It will take input from the user and send it to the FracCalc class to be solved, and then be printed. If "quit" is
+entered, then the program will stop.
+
+The Fraction class will have a constructor that sets the first fraction entered by the user as the initial result, in terms of numerator and denominator variables.
+It will also use the reduce method to set the initial value to it's simplest improper fraction form.
+
+The Fraction class will have a method that determines the greatest common denominator of a fraction, which is neccessary when reducing a fraction to its simplest
+form.
+
+The Fraction class will have a method that reduces the fraction to its simplest form.
+
+Formatting method
+
+Adding method (adds the second fraction provided)
+
+Subtracting method (subtracts the second fraction provided)
+
+Multiplication method (multiplies the second fraction provided)
+
+Division method (divides the second fraction provided)
+
+ 
+The arithmetic methods will have a parameter for the numerator and denominator.
 
 1. 7/1 + -7 should equal 0
 2. 2/5 + 3/5 should equal 1
