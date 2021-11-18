@@ -23,6 +23,12 @@ public class Day
    
    private static final int SATURDAY = 7;
    private static final int SUNDAY = 1;
+   private static final int HALLOWEEN_MONTH = 10;
+   private static final int HALLOWEEN_DAY = 31;
+   private static final int VALENTINES_MONTH = 2;
+   private static final int VALENTINES_DAY = 14;
+   private static final int CHRISTMAS_MONTH = 12;
+   private static final int CHRISTMAS_DAY = 25;
 
    /**
       Constructs a day object representing today's date.
@@ -131,13 +137,13 @@ public class Day
    */
    public String holidayName() {
       
-      if (month == 10 && date == 31) {
+      if (month == HALLOWEEN_MONTH && date == HALLOWEEN_DAY) {
          return "Halloween";
       }
-      if (month == 2 && date == 14) {
+      if (month == VALENTINES_MONTH && date == VALENTINES_DAY) {
          return "Valentine's Day";
       }
-      if (month == 12 && date == 25) {
+      if (month == CHRISTMAS_MONTH && date == CHRISTMAS_DAY) {
          return "Christmas Day";
       }
       else {
@@ -165,7 +171,7 @@ public class Day
          || dayOfTheWeek() == SUNDAY
          || holidayName() != "null") {
          return true;
-         }
+      }
       else {
          return false;
       }
