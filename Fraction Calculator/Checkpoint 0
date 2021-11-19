@@ -1,0 +1,40 @@
+Checkpoint 0
+
+The main class, FracCalc will have a scanner. It will take input from the user and send it to the FracCalc class to be solved, and then be printed. If "quit" is
+entered, then the program will stop.
+
+The Fraction class will have a constructor that sets the first fraction entered by the user as the initial result, in terms of numerator and denominator variables.
+It will also use the reduce method to set the initial value to its simplest improper fraction form. Depending on the arithmetic symbol ("+", "-", "*", "/") either
+the add, subtract, multiply, or divide method will be called. There will also be getters to obtain the value of the changed variable.
+The GCD method will determine the greatest common denominator of a fraction (which is neccesary when reducing a fraction to its simplest form) and will return the
+result.
+The reduction method will reduce the fraction to its simplest improper fraction form and will return the result.
+The add method will add the second fraction with the first fraction and will return the result.
+The subtract method will subtract the second fraction from the first fraction and will return the result.
+The multiply method will multiply the second fraction with the first fraction and will return the result.
+The divide method will divide the second fraction with the first fraction and will return the result.
+The format method will returns a string after formatting the changed numerator and denominator.
+
+
+Test and test answers:
+
+1. 7/1 + -7 should equal 0
+2. 2/5 + 3/5 should equal 1
+3. -1_2/4 + 1_3/8 should equal -1/8
+4. 1/2 + 2/3 should equal 1_1/6
+5. 17/2 + 17/9 should equal 10_7/18
+6. 7/1 - -7 should equal 14
+7. 2/5 - 3/5 should equal -1/5
+8. -1_2/4 - 1_3/8 should equal -7/8
+9. 1/2 - 2/3 should equal -1_1/6
+10. 17/2 - 17/9 should equal 6_11/18
+11. -7 * 7/1 should equal -49
+12. 2/5 * 3/5 should equal 6/25
+13. 1_2/4 * 1_3/8 should equal 3/16
+14. 1/2 * 2/3 should equal 1/3
+15. 17/2 * 17/9 should equal 16_1/18
+16. -7 / 7/1 should equal -1
+17. 2/5 / 5/5 should equal 2/3
+18. 1_2/4 / 1_3/8 should equal 3/16
+19. 1/2 / 2/3 should equal 3/4
+20. 17/2 / 17/9 should equal 9/2
