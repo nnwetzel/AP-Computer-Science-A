@@ -6,7 +6,7 @@ public class RandomNumbers {
    public static void main (String[] args) {
    
    // Assigns randomizer value of 51 (won't print 51 but numbers 50 or less) (no magic numbers)
-   int randomizer = 51;
+   int randomizer = 2;
    // Uses Math.random() to assign variables a number between 1-50
    int a = (int)(Math.random() * randomizer);
    int b = (int)(Math.random() * randomizer);
