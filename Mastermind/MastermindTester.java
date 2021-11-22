@@ -37,10 +37,10 @@ public class MastermindTester {
             
             i++;
                
-            if (mastermind.winCondition()) { // If the win condition is met, overload i so the loop ends. 
+            if (mastermind.winCondition()) {
                
                System.out.print("\nYou have won. ");
-               i = amountOfRounds + 1;
+               i = amountOfRounds + 1; // If the win condition is met, overload i so the loop ends. 
             }
             
             if (i == amountOfRounds) { // If the user uses all of the rounds they are given to guess the number, they have lost.
