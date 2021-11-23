@@ -9,10 +9,8 @@ public class Mastermind {
    int thirdGen;
    int fourthGen;
    
-   int firstGuess;
-   int secondGuess;
-   int thirdGuess;
-   int fourthGuess;
+   int correctNum;
+   int correctSpot;
    
    /**
    *  Sets firstGen, secondGen, thirdGen, fourthGen as a random integer that is not 0 or repeated.
@@ -47,6 +45,7 @@ public class Mastermind {
          || fourthGen == secondGen
          || fourthGen == thirdGen);
    }
+   
    /**
    *  Returns the first generated integer.
    *  @return the first generated integer
@@ -78,120 +77,104 @@ public class Mastermind {
    public int getFourthGen() {
       return fourthGen;
    }
-   
-   
+
    /**
-   *  Sets the user's first guess as firstGuess.
+   *  Returns the amount of correct numbers after comparing the user's guess with the generated integers.
    *  @param firstGuess the user's first guess
-   */
-   public void setFirstGuess (int firstGuess) {
-      this.firstGuess = firstGuess;
-   }
-   
-   /**
-   *  Sets the user's second guess as secondGuess.
    *  @param secondGuess the user's second guess
-   */
-   public void setSecondGuess (int secondGuess) {
-      this.secondGuess = secondGuess;
-   }
-
-   /**
-   *  Sets the user's third guess as thirdGuess.
    *  @param thirdGuess the user's third guess
-   */
-   public void setThirdGuess (int thirdGuess) {
-      this.thirdGuess = thirdGuess;
-   }
-
-   /**
-   *  Sets the user's fourth guess as fourthGuess.
    *  @param fourthGuess the user's fourth guess
+   *  @return the amount of correct numbers
    */
-   public void setFourthGuess (int fourthGuess) {
-      this.fourthGuess = fourthGuess;
-   }
-
-   /**
-   *  Compares the user's guess with the generated integers and reports if they are in the correct spot or is a correct number (but in the wrong spot).
-   */
-   public void guessChecker() {
+   public int correctNumChecker(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
    
-      if (firstGuess == getSecondGen()
-         || firstGuess == getThirdGen()
-         || firstGuess == getFourthGen()) {
-         
-         System.out.println(firstGuess + " is a correct number, but in the wrong spot.");
-      }
-      if (secondGuess == getFirstGen()
-         || secondGuess == getThirdGen()
-         || secondGuess == getFourthGen()) {
-         System.out.println(secondGuess + " is a correct number, but in the wrong spot.");
-      }
-      if (thirdGuess == getFirstGen()
-         || thirdGuess == getSecondGen()
-         || thirdGuess == getFourthGen()) {
-         System.out.println(thirdGuess + " is a correct number, but in the wrong spot.");
-      }
-      if (fourthGuess == getFirstGen()
-         || fourthGuess == getSecondGen()
-         || fourthGuess == getThirdGen()) {
-         System.out.println(fourthGuess + " is a correct number, but in the wrong spot.");
+      if (firstGuess == getFirstGen()
+      || secondGuess == getFirstGen()
+      || thirdGuess == getFirstGen()
+      || fourthGuess == getFirstGen()) {
+      
+         correctNum++;
       }
       
+      if (firstGuess == getSecondGen()
+      || secondGuess == getSecondGen()
+      || thirdGuess == getSecondGen()
+      || fourthGuess == getSecondGen()) {
+      
+         correctNum++;
+      }
+      
+      if (firstGuess == getThirdGen()
+      || secondGuess == getThirdGen()
+      || thirdGuess == getThirdGen()
+      || fourthGuess == getThirdGen()) {
+      
+         correctNum++;
+      }
+      
+      if (firstGuess == getFourthGen()
+      || secondGuess == getFourthGen()
+      || thirdGuess == getFourthGen()
+      || fourthGuess == getFourthGen()) {
+      
+         correctNum++;
+      }
+      return correctNum;
+   }
+   
+   /**
+   *  Sets the correct number counter to 0.
+   *  @return the amount of correct numbers
+   */
+   public int resetCorrectNum() {
+      correctNum = 0;
+      return correctNum;
+   }
+   
+   /**
+   *  Returns the amount of integers in the correct spot after comparing the user's guess with the generated integers.
+   *  @param firstGuess the user's first guess
+   *  @param secondGuess the user's second guess
+   *  @param thirdGuess the user's third guess
+   *  @param fourthGuess the user's fourth guess
+   *  @return the amount of integers in the correct spot
+   */  
+   public int correctSpotChecker(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
       if (firstGuess == getFirstGen()) {
-         System.out.println(firstGuess + " is in the correct spot.");
+         correctSpot++;
       }
       
       if (secondGuess == getSecondGen()) {
-         System.out.println(secondGuess + " is in the correct spot.");
+         correctSpot++;
       }
       
       if (thirdGuess == getThirdGen()) {
-         System.out.println(thirdGuess + " is in the correct spot.");
+         correctSpot++;
       }
       
       if (fourthGuess == getFourthGen()) {
-         System.out.println(fourthGuess + " is in the correct spot.");
+         correctSpot++;
       }
+      return correctSpot;
    }
    
    /**
-   *  Returns the user's first guess.
-   *  @return the user's first guess
+   *  Sets the correct spot counter to 0.
+   *  @return the amount of integers in the correct spot
    */
-   public int getFirstGuess() {
-      return firstGuess;
+   public int resetCorrectSpot() {
+      correctSpot = 0;
+      return correctSpot;
    }
-   
+
    /**
-   *  Returns the user's second guess.
-   *  @return the user's second guess
+   *  Checks and see if all of the user's guesses match up with the generated integers.
+   *  @param firstGuess the user's first guess
+   *  @param secondGuess the user's second guess
+   *  @param thirdGuess the user's third guess
+   *  @param fourthGuess the user's fourth guess
    */
-   public int getSecondGuess() {
-      return secondGuess;
-   }
-   
-   /**
-   *  Returns the user's third guess.
-   *  @return the user's third guess
-   */
-   public int getThirdGuess() {
-      return thirdGuess;
-   }
-   
-   /**
-   *  Returns the user's fourth guess.
-   *  @return the user's fourth guess
-   */
-   public int getFourthGuess() {
-      return fourthGuess;
-   }
-   
-   /**
-   *  If all of the user's guesses match up with the generated integers, return true.
-   */
-   public boolean winCondition() {
+   public boolean winCondition(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
       if (firstGuess == getFirstGen()
       && secondGuess == getSecondGen()
       && thirdGuess == getThirdGen()

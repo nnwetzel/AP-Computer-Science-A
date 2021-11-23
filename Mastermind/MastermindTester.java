@@ -19,45 +19,42 @@ public class MastermindTester {
          
          do {
          
-            int firstGen = mastermind.getFirstGen();
-            int secondGen = mastermind.getSecondGen();
-            int thirdGen = mastermind.getThirdGen();
-            int fourthGen = mastermind.getFourthGen();
+            int firstGen = mastermind.getFirstGen(); // Sets firstGen as the first generated integer.
+            int secondGen = mastermind.getSecondGen(); // Sets secondGen  as the second generated integer.
+            int thirdGen = mastermind.getThirdGen(); // Sets thirdGen as the third generated integer.
+            int fourthGen = mastermind.getFourthGen(); // Sets fourthGen as the fourth generated integer.
             
             int firstGuess = in.nextInt();
-            mastermind.setFirstGuess(firstGuess);
             int secondGuess = in.nextInt();
-            mastermind.setSecondGuess(secondGuess);
             int thirdGuess = in.nextInt();
-            mastermind.setThirdGuess(thirdGuess);
             int fourthGuess = in.nextInt();
-            mastermind.setFourthGuess(fourthGuess);
             
-            mastermind.guessChecker(); // Reports on whether the user's guess is in the correct spot or is a correct number (but in the wrong spot).
-            
-            i++;
+            System.out.println("There are " + mastermind.correctNumChecker(firstGuess, secondGuess, thirdGuess, fourthGuess) + " integers that are correct."); // Reports on the amount of integers that are correct.
+            mastermind.resetCorrectNum(); // Resets the correct number counter.
+            System.out.println("There are " + mastermind.correctSpotChecker(firstGuess, secondGuess, thirdGuess, fourthGuess) + " integers that are in the correct spot."); // Reports on the amount of integers that are in the correct spot.
+            mastermind.resetCorrectSpot(); // Resets the correct spot counter.
                
-            if (mastermind.winCondition()) {
+            if (mastermind.winCondition(firstGuess, secondGuess, thirdGuess, fourthGuess)) { // Checks if the win condition has been met.
                
                System.out.print("\nYou have won. ");
-               i = amountOfRounds + 1; // If the win condition is met, overload i so the loop ends. 
+               i = amountOfRounds + 1; // Overloads the round counter so the loop ends. 
             }
             
-            if (i == amountOfRounds) { // If the user uses all of the rounds they are given to guess the number, they have lost.
+            if (i == amountOfRounds) { // Checks if the user has used all the amount of rounds.
             
                System.out.print("\nYou have lost. ");
             }
          }
-            while (i < amountOfRounds);
+            while (i < amountOfRounds); // Ends the loop when the user has either used up all the amount of rounds or has won.
          
          System.out.println("Would you like to play again? (y/n)");
          choice = in.next().charAt(0);
          
          if (choice == 'y') {
-            i = 0; // Resets the loop.
+            i = 0; // Resets the amount of rounds the user has.
          }
       
       }
-         while (choice == 'y');
+         while (choice == 'y'); // If the user wants to play again, redo the loop.
    }
 }
