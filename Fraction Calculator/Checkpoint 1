@@ -1,0 +1,16 @@
+Checkpoint 1
+
+FracCalc
+
+Prints out instruction for the user on how to input their equation (#_#/# or #/#).
+Prompts the user to enter their equation.
+Stores the user's input as as string called "user_input" and sends it to the Fraction object.
+Prints out the result.
+Fraction calculate(String input) creates a fraction object, splits the user's input into components with the Fraction(int numerator, int denominator) method,
+calculates the result based on the operator and formats it, then sends it to the result to be printed.
+
+Fraction
+
+Constructor Fraction(String fraction) takes in the string that is inputted by the user and parses it into numerator and denominator integers.
+Constructor Fraction (int numerator, int denominator) sets the numerator and denominator as integers.
+String toString() formats and simplifies the fraction, then returns the output.
