@@ -6,7 +6,7 @@ public class MastermindTester {
    
       int amountOfRounds = 12;
       char choice;
-      boolean replay = false;
+      boolean replay = true;
    
       Mastermind mastermind = new Mastermind();
       
@@ -54,8 +54,8 @@ public class MastermindTester {
          System.out.println("Would you like to play again? (y/n)");
          choice = in.next().charAt(0);
          
-         if (choice == 'y') {
-            replay = true;
+         if (choice == 'n') {
+            replay = false;
          }
       
       }
