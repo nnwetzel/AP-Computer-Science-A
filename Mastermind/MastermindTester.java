@@ -56,7 +56,6 @@ public class MastermindTester {
          
          if (choice == 'y') {
             replay = true;
-            i = 0; // Resets the amount of rounds the user has.
          }
       
       }
