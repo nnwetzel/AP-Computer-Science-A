@@ -5,8 +5,8 @@ public class MastermindTester {
    public static void main(String args[]) {
    
       int amountOfRounds = 12;
-      int i = 0;
       char choice;
+      boolean replay = false;
    
       Mastermind mastermind = new Mastermind();
       
@@ -16,6 +16,7 @@ public class MastermindTester {
       
          mastermind.randomize(); // Generates 4 different random integers.
          System.out.println("Enter four different numbers in between 1-6: ");
+         int i = 0;
          
          do {
          
@@ -33,7 +34,9 @@ public class MastermindTester {
             mastermind.resetCorrectNum(); // Resets the correct number counter.
             System.out.println("There are " + mastermind.correctSpotChecker(firstGuess, secondGuess, thirdGuess, fourthGuess) + " integers that are in the correct spot."); // Reports on the amount of integers that are in the correct spot.
             mastermind.resetCorrectSpot(); // Resets the correct spot counter.
-               
+            
+            i++;
+            
             if (mastermind.winCondition(firstGuess, secondGuess, thirdGuess, fourthGuess)) { // Checks if the win condition has been met.
                
                System.out.print("\nYou have won. ");
@@ -41,7 +44,8 @@ public class MastermindTester {
             }
             
             if (i == amountOfRounds) { // Checks if the user has used all the amount of rounds.
-            
+               
+               System.out.println("\nThe correct answer was: " + firstGen + " " + secondGen + " " + thirdGen + " " + fourthGen);
                System.out.print("\nYou have lost. ");
             }
          }
@@ -51,10 +55,11 @@ public class MastermindTester {
          choice = in.next().charAt(0);
          
          if (choice == 'y') {
+            replay = true;
             i = 0; // Resets the amount of rounds the user has.
          }
       
       }
-         while (choice == 'y'); // If the user wants to play again, redo the loop.
+         while (replay); // If the user wants to play again, redo the loop.
    }
 }
