@@ -1,6 +1,6 @@
 public class Hangman {
 
-   private static String[] words = { "weird","handkerchief","bandwagon","computer","sphynx", "france", "automobile", "puppy", "blizzard" };
+   private static String[] words = { "weird","handkerchief","bandwagon","computer","sphynx", "france", "automobile", "puppy", "blizzard", "soccer" };
    public static String word;
    public static String decodedWord;
    public static int amountOfRounds = 6;
