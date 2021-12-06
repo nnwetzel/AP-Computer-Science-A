@@ -4,16 +4,44 @@ public class Fraction {
    
    private int numerator;
    private int denominator;
+   private int operand;
 
    public Fraction(String fraction) {
       // TODO: parse the fraction into the numerator and denominator
-      // Example: 1_1/2 or 8/4 ughhhhhh
-
+      // e.g., -8_1/5
       
-      Scanner console_input = new Scanner(fraction);
+      if (fraction.contains("_") && fraction.contains("/")) { // 
       
-
-
+         int whole = Integer.parseInt(fraction.substring(0, fraction.indexOf('_'))); // -8
+         numerator = Integer.parseInt(fraction.substring(fraction.indexOf('_') + 1, fraction.indexOf('/'))); // 1
+         denominator = Integer.parseInt(fraction.substring(fraction.indexOf('/') + 1)); // 5
+         
+         if (whole < 0) { // true
+         
+            whole = whole * -1; // 8
+            numerator += whole * denominator; // 41
+            numerator = numerator * -1; // -41
+         
+         }
+         else {
+         
+            numerator += whole * denominator;
+            
+         }
+      
+      }
+      else if (fraction.contains("/")) {
+      
+         numerator = Integer.parseInt(fraction.substring(0, fraction.indexOf('/')));
+         denominator = Integer.parseInt(fraction.substring(fraction.indexOf('/') + 1));
+      
+      }
+      else {
+      
+         numerator = Integer.parseInt(fraction);
+         denominator = 1; 
+      }
+      
    } // end Fraction constructor
 
    public Fraction(int numerator, int denominator) {
@@ -21,6 +49,18 @@ public class Fraction {
       this.numerator = numerator;
       this.denominator = denominator;
    } // end Fraction constructor
+   
+   public int getNum() {
+   
+      return numerator;
+      
+   }
+   
+   public int getDen() {
+   
+      return denominator;
+   
+   }
 
    
    public String toString(){
