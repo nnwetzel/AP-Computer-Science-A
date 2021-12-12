@@ -10,16 +10,16 @@ public class FracCalc {
    
    	// Instructions
    	// TODO: Make these instructions your own - making sure to explain what the user needs to do
-      System.out.println("Enter a fraction equation for me to calculate");
-      System.out.println("(I.E.: 2_1/3 + 1_1/5)");
-      System.out.println("Type \"quit\" to exit the program.");
+      System.out.println("Welcome to Fraction Calculator.");
+      System.out.println("Type \"quit\" to exit the program.\n");
       
    	
    	// Calculator
       do {
       
       	// Get the input from the user
-         System.out.println("Please enter your fraction to be calculated (i.e.: 2_1/3 + 1_1/5)");
+         System.out.println("Please enter an equation that you want solved.");
+         System.out.println("For example, \"2_1/3 + 1_1/5\".");
       
          String user_input = input.nextLine();
       	
@@ -31,7 +31,7 @@ public class FracCalc {
          {
          
             Fraction result = calculate(user_input);
-            System.out.println(result);
+            System.out.println(result.toString());
          }
       	
       // Exit condition met?  If not go around again!
@@ -56,12 +56,37 @@ public class FracCalc {
       Fraction frac1 = new Fraction(parts[0]);
       String operand = parts[1];
       Fraction frac2 = new Fraction(parts[2]);
-      
-      System.out.println(frac1 + " " + operand + " " + frac2);
    	
    	// TODO: Do the calculation based on the operator
-   	
+      int num = 0;
+      int den = 0;
+      
+      if (operand.contains("+")) {
+      
+         num = (frac1.getNum() * frac2.getDen()) + (frac2.getNum() * frac1.getDen());
+         den = frac1.getDen() * frac2.getDen();
+         
+      }
+      if (operand.contains("-")) {
+      
+         num = (frac1.getNum() * frac2.getDen()) - (frac2.getNum() * frac1.getDen());
+         den = frac1.getDen() * frac2.getDen();
+      
+      }
+      if (operand.contains("*")) {
+      
+         num = frac1.getNum() * frac2.getNum();
+         den = frac1.getDen() * frac2.getDen();
+      
+      }
+      if (operand.contains("/")) {
+      
+         num = frac1.getNum() * frac2.getDen();
+         den = frac2.getNum() * frac1.getDen();
+      
+      }
    	// TODO: Create the resultant Fraction and return it
+      result = new Fraction(num, den);
    	
       return result;
    	
