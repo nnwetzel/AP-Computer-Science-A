@@ -29,7 +29,6 @@ public class FracCalc {
          }
          else
          {
-         
             Fraction result = calculate(userInput);
             System.out.println(result.toString());
          }
@@ -65,25 +64,21 @@ public class FracCalc {
       
          num = (frac1.getNum() * frac2.getDen()) + (frac2.getNum() * frac1.getDen());
          den = frac1.getDen() * frac2.getDen();
-         
       }
       if (operand.contains("-")) {
       
          num = (frac1.getNum() * frac2.getDen()) - (frac2.getNum() * frac1.getDen());
          den = frac1.getDen() * frac2.getDen();
-      
       }
       if (operand.contains("*")) {
       
          num = frac1.getNum() * frac2.getNum();
          den = frac1.getDen() * frac2.getDen();
-      
       }
       if (operand.contains("/")) {
       
          num = frac1.getNum() * frac2.getDen();
          den = frac2.getNum() * frac1.getDen();
-      
       }
    	// TODO: Create the resultant Fraction and return it
       result = new Fraction(num, den);
