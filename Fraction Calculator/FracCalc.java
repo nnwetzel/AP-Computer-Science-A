@@ -20,17 +20,17 @@ public class FracCalc {
       	// Get the input from the user
          System.out.println("Please enter an equation that you want solved.");
          System.out.println("For example, \"2_1/3 + 1_1/5\".");
-      
-         String user_input = input.nextLine();
-      	
-         if (user_input.equalsIgnoreCase("quit") )
+
+         String userInput = input.nextLine();
+
+         if (userInput.equalsIgnoreCase("quit") )
          {
             done = true;
          }
          else
          {
          
-            Fraction result = calculate(user_input);
+            Fraction result = calculate(userInput);
             System.out.println(result.toString());
          }
       	
