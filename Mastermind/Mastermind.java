@@ -2,120 +2,120 @@ import java.util.Random;
 
 public class Mastermind {
 
-   int randomizer = 7;
+   public static final int RANDOMIZER = 7;
    
-   int firstGen;
-   int secondGen;
-   int thirdGen;
-   int fourthGen;
+   int randomNum1;
+   int randomNum2;
+   int randomNum3;
+   int randomNum4;
    
    int correctNum;
    int correctSpot;
    
    /**
-   *  Sets firstGen, secondGen, thirdGen, fourthGen as a random integer that is not 0 or repeated.
+   *  Sets randomNum1, randomNum2, randomNum3, randomNum4 as a random integer that is not 0 or repeated.
    */
    public void randomize() {
    
       Random gen = new Random();
       
       do {
-         firstGen = gen.nextInt(randomizer);
+         randomNum1 = gen.nextInt(RANDOMIZER);
       }
-         while (firstGen == 0);
+         while (randomNum1 == 0);
       
       do {
-         secondGen = gen.nextInt(randomizer);
+         randomNum2 = gen.nextInt(RANDOMIZER);
       }
-         while (secondGen == 0
-         || secondGen == firstGen);
+         while (randomNum2 == 0
+         || randomNum2 == randomNum1);
          
       do {
-         thirdGen = gen.nextInt(randomizer);
+         randomNum3 = gen.nextInt(RANDOMIZER);
       }
-         while (thirdGen == 0
-         || thirdGen == firstGen
-         || thirdGen == secondGen);
+         while (randomNum3 == 0
+         || randomNum3 == randomNum1
+         || randomNum3 == randomNum2);
           
       do {
-         fourthGen = gen.nextInt(randomizer);
+         randomNum4 = gen.nextInt(RANDOMIZER);
       }
-         while (fourthGen == 0
-         || fourthGen == firstGen
-         || fourthGen == secondGen
-         || fourthGen == thirdGen);
+         while (randomNum4 == 0
+         || randomNum4 == randomNum1
+         || randomNum4 == randomNum2
+         || randomNum4 == randomNum3);
    }
    
    /**
    *  Returns the first generated integer.
    *  @return the first generated integer
    */
-   public int getFirstGen() {
-      return firstGen;
+   public int getRandomNum1() {
+      return randomNum1;
    }
    
    /**
    *  Returns the second generated integer.
    *  @return the second generated integer
    */
-   public int getSecondGen() {
-      return secondGen;
+   public int getRandomNum2() {
+      return randomNum2;
    }
    
    /**
    *  Returns the third generated integer.
    *  @return the third generated integer
    */
-   public int getThirdGen() {
-      return thirdGen;
+   public int getRandomNum3() {
+      return randomNum3;
    }
    
    /**
    *  Returns the fourth generated integer.
    *  @return the fourth generated integer
    */
-   public int getFourthGen() {
-      return fourthGen;
+   public int getRandomNum4() {
+      return randomNum4;
    }
 
    /**
    *  Returns the amount of correct numbers after comparing the user's guess with the generated integers.
-   *  @param firstGuess the user's first guess
-   *  @param secondGuess the user's second guess
-   *  @param thirdGuess the user's third guess
-   *  @param fourthGuess the user's fourth guess
+   *  @param guess1 the user's first guess
+   *  @param guess2 the user's second guess
+   *  @param guess3 the user's third guess
+   *  @param guess4 the user's fourth guess
    *  @return the amount of correct numbers
    */
-   public int correctNumChecker(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
+   public int correctNumChecker(int guess1, int guess2, int guess3, int guess4) {
    
-      if (firstGuess == getFirstGen()
-      || secondGuess == getFirstGen()
-      || thirdGuess == getFirstGen()
-      || fourthGuess == getFirstGen()) {
+      if (guess1 == getRandomNum1()
+      || guess2 == getRandomNum1()
+      || guess3 == getRandomNum1()
+      || guess4 == getRandomNum1()) {
       
          correctNum++;
       }
       
-      if (firstGuess == getSecondGen()
-      || secondGuess == getSecondGen()
-      || thirdGuess == getSecondGen()
-      || fourthGuess == getSecondGen()) {
+      if (guess1 == getRandomNum2()
+      || guess2 == getRandomNum2()
+      || guess3 == getRandomNum2()
+      || guess4 == getRandomNum2()) {
       
          correctNum++;
       }
       
-      if (firstGuess == getThirdGen()
-      || secondGuess == getThirdGen()
-      || thirdGuess == getThirdGen()
-      || fourthGuess == getThirdGen()) {
+      if (guess1 == getRandomNum3()
+      || guess2 == getRandomNum3()
+      || guess3 == getRandomNum3()
+      || guess4 == getRandomNum3()) {
       
          correctNum++;
       }
       
-      if (firstGuess == getFourthGen()
-      || secondGuess == getFourthGen()
-      || thirdGuess == getFourthGen()
-      || fourthGuess == getFourthGen()) {
+      if (guess1 == getRandomNum4()
+      || guess2 == getRandomNum4()
+      || guess3 == getRandomNum4()
+      || guess4 == getRandomNum4()) {
       
          correctNum++;
       }
@@ -133,26 +133,26 @@ public class Mastermind {
    
    /**
    *  Returns the amount of integers in the correct spot after comparing the user's guess with the generated integers.
-   *  @param firstGuess the user's first guess
-   *  @param secondGuess the user's second guess
-   *  @param thirdGuess the user's third guess
-   *  @param fourthGuess the user's fourth guess
+   *  @param guess1 the user's first guess
+   *  @param guess2 the user's second guess
+   *  @param guess3 the user's third guess
+   *  @param guess4 the user's fourth guess
    *  @return the amount of integers in the correct spot
    */  
-   public int correctSpotChecker(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
-      if (firstGuess == getFirstGen()) {
+   public int correctSpotChecker(int guess1, int guess2, int guess3, int guess4) {
+      if (guess1 == getRandomNum1()) {
          correctSpot++;
       }
       
-      if (secondGuess == getSecondGen()) {
+      if (guess2 == getRandomNum2()) {
          correctSpot++;
       }
       
-      if (thirdGuess == getThirdGen()) {
+      if (guess3 == getRandomNum3()) {
          correctSpot++;
       }
       
-      if (fourthGuess == getFourthGen()) {
+      if (guess4 == getRandomNum4()) {
          correctSpot++;
       }
       return correctSpot;
@@ -169,16 +169,16 @@ public class Mastermind {
 
    /**
    *  Checks and see if all of the user's guesses match up with the generated integers.
-   *  @param firstGuess the user's first guess
-   *  @param secondGuess the user's second guess
-   *  @param thirdGuess the user's third guess
-   *  @param fourthGuess the user's fourth guess
+   *  @param guess1 the user's first guess
+   *  @param guess2 the user's second guess
+   *  @param guess3 the user's third guess
+   *  @param guess4 the user's fourth guess
    */
-   public boolean winCondition(int firstGuess, int secondGuess, int thirdGuess, int fourthGuess) {
-      if (firstGuess == getFirstGen()
-      && secondGuess == getSecondGen()
-      && thirdGuess == getThirdGen()
-      && fourthGuess == getFourthGen()) {
+   public boolean winCondition(int guess1, int guess2, int guess3, int guess4) {
+      if (guess1 == getRandomNum1()
+      && guess2 == getRandomNum2()
+      && guess3 == getRandomNum3()
+      && guess4 == getRandomNum4()) {
          return true;
       }
       else {
