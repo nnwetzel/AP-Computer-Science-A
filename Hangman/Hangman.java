@@ -10,7 +10,6 @@ public class Hangman {
    public static String decodedWord;
    public static int count;
 
-
    public Hangman() {
    
       // Clears the list of guesses.
