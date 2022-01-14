@@ -18,7 +18,6 @@ public class HangmanTester {
          
             System.out.println("");
             System.out.println("Please enter a letter: ");
-         
             String guess = input.next().toLowerCase();
             
             // Checks if the user's input is a single letter.
@@ -34,8 +33,8 @@ public class HangmanTester {
          }
          
          System.out.println("Would you like to play again? (y/n)");
-         
          char choice = input.next().charAt(0);
+         
          if (choice == 'n') {
             replay = false;
          }

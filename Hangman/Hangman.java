@@ -4,7 +4,7 @@ public class Hangman {
 
    public static final int AMOUNT_OF_GUESSES = 6;
    
-   private static String[] words = { "weird","handkerchief","bandwagon","computer","sphynx", "france", "automobile", "puppy", "blizzard", "soccer" };
+   private static String[] words = { "weird","handkerchief","bandwagon","computer","sphynx", "france", "automobile", "puppy", "blizzard", "soccer", "programming" };
    private static ArrayList<Character> guessList = new ArrayList();
    public static String word;
    public static String decodedWord;
