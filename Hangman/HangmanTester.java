@@ -14,7 +14,7 @@ public class HangmanTester {
          Hangman h = new Hangman();
          System.out.println("You have a total of " + h.AMOUNT_OF_GUESSES + " guesses.");
       
-         while (h.count < h.AMOUNT_OF_GUESSES && !h.decodedWord.equals(h.word)) {
+         while (h.getCount() < h.AMOUNT_OF_GUESSES && !h.getDecodedWord().equals(h.getWord())) {
          
             System.out.println("");
             System.out.println("Please enter a letter: ");

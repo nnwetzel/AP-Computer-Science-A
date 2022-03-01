@@ -6,9 +6,9 @@ public class Hangman {
    
    private static String[] words = { "weird","handkerchief","bandwagon","computer","sphynx", "france", "automobile", "puppy", "blizzard", "soccer", "programming" };
    private static ArrayList<Character> guessList = new ArrayList();
-   public static String word;
-   public static String decodedWord;
-   public static int count;
+   private static String word;
+   private static String decodedWord;
+   private static int count;
 
    public Hangman() {
    
@@ -20,6 +20,17 @@ public class Hangman {
       decodedWord  = new String(new char[word.length()]).replace("\0", "*");
       // Sets the count to 0.
       count = 0;
+   }
+   
+   public String getWord() {
+      return word;
+   }
+   
+   public String getDecodedWord() {
+      return decodedWord;
+   }
+   public int getCount() {
+      return count;
    }
    
    /**
