@@ -9,18 +9,29 @@ public class BankAccount {
       this(accountHolder, MINIMUM_BALANCE);
    }
    
+   
    public BankAccount(String accountHolder, double startingBalance) {
    
       this.accountHolder = accountHolder;
       balance = startingBalance;
    }
    
+   /**
+   *  Adds to balance.
+   *  @amount - The amount added to the balance.
+   */
    public double deposit(double amount) {
    
       balance += amount;
+      
+      System.out.println(accountHolder + "'s new balance after a withdraw of " + amount + " is:");
       return balance;
    }
    
+   /**
+   *  Takes away from balance.
+   *  @amount - The amount taken away from balance.
+   */
    public double withdraw(double amount) {
    
       double tempBalance = balance - amount;
@@ -36,9 +47,14 @@ public class BankAccount {
          balance = tempBalance;
          
       }
+      System.out.println(accountHolder + "'s new balance after a withdraw of " + amount + " is:");
       return balance;
    }
    
+   /**
+   *  Returns balance.
+   *  @balance - The balance.
+   */
    public double getBalance() {
    
       return balance;

@@ -4,13 +4,23 @@ public class BankAccountTester {
    
       BankAccount joe = new BankAccount("Joe Smith");
       BankAccount chris = new BankAccount("Chris Christopherson", 5000.0);
+      SavingsAccount reyna = new SavingsAccount("Reyna Davis", 8750.5);
       SavingsAccount frank = new SavingsAccount("Frank Jones", 3500);
+        
+      double newBalance = joe.deposit(500);
+      System.out.println(newBalance);
       
-      double newBalance = frank.withdraw(500, SavingsAccount.MINIMUM_BALANCE);
-      System.out.println("Frank's new balance after a withdrawl of 500 is: " + newBalance);
+      newBalance = chris.withdraw(1000);
+      System.out.println(newBalance);
       
-      newBalance = joe.withdraw(500, BankAccount.MINIMUM_BALANCE);
-      System.out.println("Joe's new balance after a withdrawl of 500 is: " + newBalance);
+      newBalance = reyna.withdraw(500, SavingsAccount.MINIMUM_BALANCE);
+      System.out.println(newBalance);
+      
+      newBalance = frank.deposit(750, SavingsAccount.MINIMUM_BALANCE);
+      System.out.println(newBalance);
+      
+   
+   
    }
 
 }

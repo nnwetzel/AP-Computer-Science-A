@@ -15,23 +15,60 @@ public class SavingsAccount extends BankAccount {
       super(accountHolder, startingBalance);   
    }
    
-   public void deposit(double amount) {
+   /**
+   *  Takes away from the balance.
+   *  @amount - The amount taken away from the balance.
+   *  @minBal - The minimum balance required for the withdraw.
+   */
+   public double withdraw(double amount, double minBal) {
    
-      super.deposit(amount);
+      double balance = super.getBalance();
+      
+      if (balance < minBal) {
+      
+         System.out.println("You have insufficent funds for this withdraw.");
+      }
+      else {
+      
+         super.withdraw(amount);
+         balance = super.getBalance();
+      }
+
+      return balance;
+   }
+   
+   /**
+   *  Adds to balance. Calculates and adds interest to balance.
+   *  @amount - The amount added to the balance.
+   *  @minBal - The minimum balance for the deposit.
+   */
+   public double deposit(double amount, double minBal) {
       
       double balance = super.getBalance();
+      
+      if (balance < minBal) {
+      
+         System.out.println("You have insufficent funds for this withdraw.");
+      }
+      else {
+      
+         super.deposit(amount);
+         balance = super.getBalance();
+      }
+   
       double interest = 0;
       
       if (balance > MAX_AMOUNT_FOR_HIGH_INTEREST) {
       
          interest = MAX_AMOUNT_FOR_HIGH_INTEREST * INTEREST_RATE_REST;
          
-      
       } 
       else {
       
-         interest = balance * MAX_AMOUNT_FOR_HIGH_INTERST;
+         interest = balance * MAX_AMOUNT_FOR_HIGH_INTEREST;
       
       }
+
+      return balance + (balance * interest);
    }
 }
