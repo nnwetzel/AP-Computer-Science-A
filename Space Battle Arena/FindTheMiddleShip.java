@@ -29,7 +29,6 @@ public class FindTheMiddleShip extends BasicSpaceship {
         
       switch (state)
       {
-        
          case 1:
             return new RotateCommand(ship.getPosition.getAngleTo(midpoint) - ship.getOrientation());
             
@@ -41,8 +40,9 @@ public class FindTheMiddleShip extends BasicSpaceship {
             else {
                return new ThrustCommand ('B', duration, power);
             }
+            
          case 3:
-            state = state - 3;
+            state = state - 3;    
       }
       return new IdleCommand(0.1);
    }
